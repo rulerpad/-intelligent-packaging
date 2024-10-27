@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: php-fpm/Dockerfile
+    volumes:
+      - ../app:/var/www/html
+    environment:
+      PHP_IDE_CONFIG: serverName=intelligent-packaging-app
+    extra_hosts:
+      - "docker.host.internal:host-gateway"
